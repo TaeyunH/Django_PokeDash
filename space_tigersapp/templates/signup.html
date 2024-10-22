@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Poké Dash</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .signup-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 10px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #4e0cbf, #1d60e6);
+        }
+
+        .icon {
+            position: absolute;
+            margin-left: -30px;
+            margin-top: 15px;
+            color: #ccc;
+        }
+
+        .input-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            left: 10px;
+            top: 14px;
+            color: #aaa;
+        }
+
+        /* Input placeholders */
+        input::placeholder {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Welcome to Poké Dash</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-wrapper">
+                <i class="icon fa fa-user"></i>
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="input-wrapper">
+                <i class="icon fa fa-lock"></i>
+                <input type="password" name="password1" placeholder="Password" required>
+            </div>
+            <div class="input-wrapper">
+                <i class="icon fa fa-lock"></i>
+                <input type="password" name="password2" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit">Signup</button>
+        </form>
+    </div>
+</body>
+</html>
